@@ -1,0 +1,22 @@
+{
+    "files": [
+        "Base.py",
+        "DataModel.py",
+        "Maker.qml",
+        "OrderModelN.py",
+        "OrderModel.py",
+        "OrderNormal.qml",
+        "OrderTTN.qml",
+        "Orders.qml",
+        "ProductModel.py",
+        "Products.qml",
+        "Setting.qml",
+        "XLS_Maker.py",
+        "main.py",
+        "main.qml",
+        "CHB_Connector.py",
+        "TTN_Model.py",
+        "TTN.qml",
+        "thread.py"
+    ]
+}
