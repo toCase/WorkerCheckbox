@@ -1,14 +1,14 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 files = [
-    ('d:\\my_py_projects\\Maker_RRO\\MakerPPO\\main.qml', '.'),
-    ('d:\\my_py_projects\\Maker_RRO\\MakerPPO\\Maker.qml', '.'),
-    ('d:\\my_py_projects\\Maker_RRO\\MakerPPO\\OrderNormal.qml', '.'),
-    ('d:\\my_py_projects\\Maker_RRO\\MakerPPO\\Orders.qml', '.'),
-    ('d:\\my_py_projects\\Maker_RRO\\MakerPPO\\OrderTTN.qml', '.'),
-    ('d:\\my_py_projects\\Maker_RRO\\MakerPPO\\Products.qml', '.'),
-    ('d:\\my_py_projects\\Maker_RRO\\MakerPPO\\Setting.qml', '.'),
-    ('d:\\my_py_projects\\Maker_RRO\\MakerPPO\\TTN.qml', '.'),
+    ('main.qml', '.'),
+    ('Maker.qml', '.'),
+    ('OrderNormal.qml', '.'),
+    ('Orders.qml', '.'),
+    ('OrderTTN.qml', '.'),
+    ('Products.qml', '.'),
+    ('Setting.qml', '.'),
+    ('TTN.qml', '.'),
 ]
 
 a = Analysis(
