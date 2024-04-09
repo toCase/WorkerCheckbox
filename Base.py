@@ -224,7 +224,8 @@ class Base(QObject):
             query = QSqlQuery(qstr, db)
             while query.next():
                 d = {
-                "good":{"code": query.value(1), "name": query.value(0), "price": int(query.value(3))},
+                # "good":{"code": "", "name": query.value(0), "price": int(query.value(3))},
+                "good":{"code": query.value(1), "name": query.value(0), "price": int(query.value(3))},                
                 "quantity": int(query.value(2)) * 1000,
                 "is_return": False,
                 "is_winnings_payout": False,

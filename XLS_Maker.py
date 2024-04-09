@@ -19,7 +19,6 @@ class XLS_Maker(QObject):
     def url_name(self, file :str):
         file = file.replace("file:///", "")
         file = file.replace("/", "\\")
-        # self.fname = file
         return file
 
     @Slot(str, result=list)
@@ -28,6 +27,8 @@ class XLS_Maker(QObject):
         Base.order_del_debug(self)
 
         print("GET DATA")
+
+        print("File: ", fname)
 
 
         if fname != "":

@@ -106,8 +106,8 @@ class CHB_Connector(QObject):
 
 
 
-    @Slot(int, result=dict)
-    def make_sell(self, order_id:int):
+    @Slot(int, int, result=dict)
+    def make_sell(self, order_id:int, t:int):
         token = Base.config_getToken(self)
 
         card = Base.order_getCard(self, order_id)
@@ -126,6 +126,12 @@ class CHB_Connector(QObject):
             "Content-Type": "application/json",
             "Authorization": "Bearer " + token
         }
+
+        if t == 1:
+            payment_label = "Передплата"
+        elif t == 2:
+            payment_label = "Безготівкова"
+
         payload = {
             "id": str(uuid.uuid4()),
             "cashier_name": cassir,
@@ -143,8 +149,8 @@ class CHB_Connector(QObject):
                 "phone": card.get("phone")
             },
             "discounts": [],
-            "bonuses": [],
-            "payments":[{"type":"CASHLESS", "label":"Передплата" ,"value":pay}],
+            "bonuses": [],            
+            "payments":[{"type":"CASHLESS", "label":payment_label, "value":pay}],
             "rounding": False,
             "header": "",
             "footer": "",

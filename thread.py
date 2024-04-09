@@ -91,7 +91,7 @@ class OrdersSet(QThread):
             i = 0
             for card in map:
                 order_id = card.get("id")
-                response = CHB_Connector.make_sell(self, order_id)
+                response = CHB_Connector.make_sell(self, order_id, 1)
                 status_code = response.get("status")
                 if status_code != 201:
                     error = response.get("response").get("message")
@@ -153,7 +153,7 @@ class NovaTracking(QThread):
                         print("CARD NEED LOAD: ", card.get('id'))
 
                         order_id = card.get("id")
-                        response = CHB_Connector.make_sell(self, order_id)
+                        response = CHB_Connector.make_sell(self, order_id, 2)
                         status_code = response.get("status")
                         if status_code != 201:
                             card["statusCB"] = status_code
