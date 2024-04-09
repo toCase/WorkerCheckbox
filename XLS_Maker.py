@@ -42,7 +42,7 @@ class XLS_Maker(QObject):
                 row_count = row_count + 1
 
             for r in range(row_start, row_count, 1):
-                phone = sheet["A" + str(r)].value
+                phone = "38" + str(sheet["A" + str(r)].value).replace("-", "").replace(" ", "")
                 product = sheet["B" + str(r)].value
                 code = product.split(" ")[-1]
                 quan = str(sheet["C" + str(r)].value)
