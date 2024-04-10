@@ -13,7 +13,7 @@ Item {
             // for win
             file_name.text = xls.url_name(file)
             var r = xls.get_data(file_name.text)
-               // for linux
+               //for linux
             // var ubuntu_file = "/home/ev/Документи/rro_test.xlsx"
             // var r = xls.get_data(ubuntu_file)
             

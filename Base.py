@@ -401,6 +401,17 @@ class Base(QObject):
             query.next()
             r = str(query.value(0))
         return r
+    
+    @Slot(str, result=str)
+    def product_getName(self, code:str):
+        db = QSqlDatabase.database("base")
+        r = ""
+        if db.isOpen():
+            qstr = "SELECT P.p_name FROM Products AS P WHERE (P.p_code = \'{}\')".format(code)
+            query = QSqlQuery(qstr, db)
+            query.next()
+            r = str(query.value(0))
+        return r
 
 
 

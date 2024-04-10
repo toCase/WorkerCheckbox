@@ -47,7 +47,7 @@ class XLS_Maker(QObject):
                 product = sheet["B" + str(r)].value
                 
                 code = product.split(" ")[-1]
-                product_name = str(product).replace(" " + code, "")
+                product_name = Base.product_getName(self, code)
 
                 quan = str(sheet["C" + str(r)].value)
                 ttn = sheet["D" + str(r)].value
@@ -90,7 +90,7 @@ class XLS_Maker(QObject):
                             
                             prod = product.split("\n")[p]
                             product_code = str(prod).split(" ")[-1]
-                            product_name = str(prod).replace(" " + product_code, "")
+                            product_name = Base.product_getName(self, code)
 
                             d = {
                                 "id":0,
