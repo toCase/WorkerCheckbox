@@ -45,7 +45,10 @@ class XLS_Maker(QObject):
             for r in range(row_start, row_count, 1):
                 phone = "38" + str(sheet["A" + str(r)].value).replace("-", "").replace(" ", "")
                 product = sheet["B" + str(r)].value
+                
                 code = product.split(" ")[-1]
+                product_name = str(product).replace(" " + code, "")
+
                 quan = str(sheet["C" + str(r)].value)
                 ttn = sheet["D" + str(r)].value
 
@@ -71,7 +74,7 @@ class XLS_Maker(QObject):
                         d = {
                             "id":0,
                             "p_order":order_id,
-                            "p_name":product,
+                            "p_name":product_name,
                             "p_code":code,
                             "p_quan":quan.split(" ")[0],
                             "p_ids":Base.product_getIDS(self, code),
@@ -84,11 +87,16 @@ class XLS_Maker(QObject):
 
                     elif product_count > 0:
                         for p in range(0, product_count, 1):
+                            
+                            prod = product.split("\n")[p]
+                            product_code = str(prod).split(" ")[-1]
+                            product_name = str(prod).replace(" " + product_code, "")
+
                             d = {
                                 "id":0,
                                 "p_order":order_id,
-                                "p_name":product.split("\n")[p],
-                                "p_code":code,
+                                "p_name":product_name,
+                                "p_code":product_code,
                                 "p_quan":quan.split("\n")[p].split(" ")[0],
                                 "p_ids":Base.product_getIDS(self, code),
                             }

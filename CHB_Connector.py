@@ -157,7 +157,7 @@ class CHB_Connector(QObject):
             "barcode": ""
         }
 
-        print("PAYLOAD -- ID: ", order_id)
+        print("PAYLOAD: ", payload)
 
         response = requests.post(url, headers=headers, json=payload)
 
